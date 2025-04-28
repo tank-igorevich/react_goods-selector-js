@@ -18,7 +18,7 @@ export const goods = [
 export const App = () => {
   const [selectedGood, setSelectedGood] = useState('Jam');
 
-  const handleSelect = good => {
+  const handleSelect = (good) => {
     setSelectedGood(good);
   };
 
@@ -37,7 +37,7 @@ export const App = () => {
               type="button"
               className="delete ml-3"
               onClick={handleClear}
-            />
+            ></button>
           </>
         ) : (
           'No goods selected'
@@ -46,13 +46,11 @@ export const App = () => {
 
       <table className="table">
         <tbody>
-          {goods.map(good => (
+          {goods.map((good) => (
             <tr
               key={good}
               data-cy="Good"
-              className={
-                good === selectedGood ? 'has-background-success-light' : ''
-              }
+              className={good === selectedGood ? 'has-background-success-light' : ''}
             >
               <td>
                 {good === selectedGood ? (
